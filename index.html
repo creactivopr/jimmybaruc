@@ -513,13 +513,13 @@ const TRACKS = [
   { title:"No Has Terminado Conmigo", year:"2026", tagES:"★ Con René González", tagEN:"★ Feat. René González",
     ytId:"", // <-- pega aquí el ID del video de YouTube cuando esté publicado
     spotify:"https://open.spotify.com/artist/7EsilEj1febGQ0ihw60a6Y",
-    thumb:"sax-rojo.jpg",
+    thumb:"sax-rojo.jpg", landing:"lanzamiento.html",
     descES:"Versión instrumental del clásico de René González — quien participa en esta nueva grabación. Una de las composiciones más queridas de la música cristiana.",
     descEN:"Instrumental sax version of René González's classic — featuring René himself. One of the most beloved songs in Christian music." },
   { title:"Abres Camino", year:"2025", tagES:"Primer sencillo", tagEN:"Debut single",
     ytId:"M-cueBmfkm4",
     spotify:"https://open.spotify.com/artist/7EsilEj1febGQ0ihw60a6Y",
-    thumb:"waymaker.jpg",
+    thumb:"waymaker.jpg", landing:"abres-camino.html",
     descES:"Su primer sencillo instrumental cristiano. Una versión en saxofón del himno «Way Maker», grabada con coros en español e inglés para alcance global.",
     descEN:"His debut Christian instrumental single. A sax rendition of the hymn 'Way Maker', recorded with Spanish and English choirs for global reach." },
 ];
@@ -605,7 +605,7 @@ document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',
 function renderMusic(){
   const g=document.getElementById('musicGrid'); const d=I18N[LANG];
   g.innerHTML=TRACKS.map((t,i)=>`
-    <div class="release reveal in" onclick="playTrack(${i})">
+    <a class="release reveal in" href="${t.landing||'#'}">
       <div class="thumb"><img src="${t.thumb}" alt="${t.title}"><div class="play"><div class="circle">▶</div></div></div>
       <div class="meta">
         <span class="eyebrow" style="font-size:.6rem">${LANG==='es'?'Sencillo':'Single'} · ${t.year}</span>
@@ -613,7 +613,7 @@ function renderMusic(){
         <p>${LANG==='es'?t.descES:t.descEN}</p>
         <span class="tag">${LANG==='es'?t.tagES:t.tagEN}</span>
       </div>
-    </div>`).join('');
+    </a>`).join('');
 }
 function renderEvents(){
   const c=document.getElementById('eventsList');
