@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Jimmy Baruc · Saxofonista | Música Instrumental Cristiana</title>
+<meta name="description" content="Jimmy Baruc, saxofonista puertorriqueño. Más de 25 años de trayectoria — de Grupo Manía y el Madison Square Garden a su nueva etapa de música instrumental cristiana. Contrataciones para iglesias y eventos." />
+<meta property="og:title" content="Jimmy Baruc · Saxofonista" />
+<meta property="og:description" content="Música instrumental cristiana con saxofón. Bendecido por Dios, bendecido para bendecir." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://img.youtube.com/vi/M-cueBmfkm4/maxresdefault.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#0d0908; --panel:#1a1210; --panel-2:#130c0b;
+    --gold:#c9a24b; --gold-soft:#e6cf95; --cream:#f3ecdc;
+    --red:#c0352e; --red-soft:#e0685f; --red-deep:#8a201c;
+    --muted:#a59c92; --line:rgba(201,162,75,.22); --maxw:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--cream);font-family:'Montserrat',system-ui,sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.12}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .gold{color:var(--gold)}
+  .eyebrow{font-weight:500;font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+
+  /* NAV */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(10px);
+    background:linear-gradient(to bottom,rgba(13,9,8,.92),rgba(13,9,8,.55));border-bottom:1px solid transparent;transition:.3s}
+  header.nav.scrolled{border-bottom:1px solid var(--line);background:rgba(13,9,8,.97)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;letter-spacing:.04em}
+  .brand span{color:var(--gold)}
+  nav.links{display:flex;gap:30px;align-items:center}
+  nav.links a{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);transition:.2s}
+  nav.links a:hover{color:var(--gold)}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .lang{display:flex;border:1px solid var(--line);border-radius:2px;overflow:hidden}
+  .lang button{background:none;border:none;color:var(--muted);font-family:inherit;font-size:.68rem;letter-spacing:.1em;padding:7px 11px;cursor:pointer;transition:.2s}
+  .lang button.active{background:var(--gold);color:var(--bg)}
+  .nav-cta{border:1px solid var(--gold);color:var(--gold);padding:9px 20px;border-radius:2px;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;transition:.25s}
+  .nav-cta:hover{background:var(--gold);color:var(--bg)}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .burger span{width:24px;height:2px;background:var(--cream)}
+
+  /* HERO */
+  .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:120px 0 90px;overflow:hidden;
+    background:radial-gradient(1200px 600px at 75% 25%,rgba(201,162,75,.16),transparent 60%),
+      radial-gradient(900px 500px at 10% 90%,rgba(201,162,75,.07),transparent 60%),
+      linear-gradient(160deg,#0d0908,#120b0a 55%,#0b0706)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;position:relative;z-index:2}
+  .hero h1{font-size:clamp(3rem,8vw,6.2rem);letter-spacing:.01em;margin:18px 0 10px}
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero .tagline{font-family:'Cormorant Garamond',serif;font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:400;font-style:italic;opacity:.92}
+  .hero p.lede{color:var(--muted);font-size:1rem;max-width:30em;margin:22px 0 34px}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:2px;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;transition:.28s;cursor:pointer;border:1px solid transparent}
+  .btn-gold{background:linear-gradient(135deg,var(--gold),#a9842f);color:#0d0908}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(201,162,75,.32)}
+  .btn-ghost{border:1px solid var(--line);color:var(--cream)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+  .hero-portrait{position:relative}
+  .portrait-frame{position:relative;border-radius:4px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6);aspect-ratio:4/5;
+    background:radial-gradient(circle at 50% 30%,rgba(201,162,75,.25),transparent 60%),linear-gradient(160deg,#20140f,#0c0807);display:flex;align-items:center;justify-content:center}
+  .portrait-frame img{width:100%;height:100%;object-fit:cover;opacity:.96}
+  .frame-badge{position:absolute;bottom:-18px;left:-18px;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--red);padding:14px 20px;border-radius:3px;box-shadow:0 16px 40px rgba(0,0,0,.5)}
+  .frame-badge b{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold);display:block;line-height:1}
+  .frame-badge small{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .scroll-ind{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;color:var(--muted);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px;opacity:.7}
+  .scroll-ind .line{width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:.3}50%{opacity:1}}
+  /* HERO ROTATING PHOTO */
+  .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
+  .hero-bg .slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.6s ease;will-change:transform,opacity;filter:blur(20px) brightness(.42) saturate(1.15)}
+  .hero-bg .slide.on{opacity:1;animation:kenburns 14s ease-out forwards}
+  @keyframes kenburns{from{transform:scale(1.04)}to{transform:scale(1.16)}}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:
+    linear-gradient(105deg,rgba(11,7,6,.94) 0%,rgba(11,7,6,.78) 42%,rgba(11,7,6,.4) 100%),
+    linear-gradient(0deg,rgba(11,7,6,.85),transparent 55%)}
+
+  /* STRIP */
+  .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(255,255,255,.012);overflow:hidden;position:relative;z-index:3}
+  .marquee{display:flex;gap:60px;padding:20px 0;white-space:nowrap;animation:scroll 30s linear infinite;width:max-content}
+  .marquee span{font-family:'Cormorant Garamond',serif;font-size:1.15rem;letter-spacing:.05em;color:var(--muted)}
+  .marquee span::after{content:"✦";margin-left:60px;color:var(--gold);opacity:.6}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  section{padding:110px 0;position:relative}
+  .sec-head{text-align:center;max-width:42em;margin:0 auto 60px}
+  .sec-head h2{font-size:clamp(2.2rem,5vw,3.4rem);margin:14px 0 0}
+  .sec-head p{color:var(--muted);margin-top:16px}
+
+  /* BIO */
+  #bio{background:linear-gradient(180deg,#0d0908,#110b0a)}
+  .bio-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+  .bio-photo{aspect-ratio:3/4;border-radius:4px;border:1px solid var(--line);overflow:hidden;
+    background:radial-gradient(circle at 40% 25%,rgba(201,162,75,.2),transparent 60%),linear-gradient(160deg,#1e1310,#0c0807);display:flex;align-items:center;justify-content:center;color:var(--gold)}
+  .bio-photo .sax{font-size:5rem;opacity:.45}
+  .bio-text h2{font-size:clamp(2rem,4.4vw,3rem);margin:14px 0 22px}
+  .bio-text p{color:#d8d2c8;margin-bottom:18px}
+  .bio-text p.first::first-letter{font-family:'Cormorant Garamond',serif;float:left;font-size:3.6rem;line-height:.8;color:var(--gold);margin:6px 12px 0 0;font-weight:700}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .stat{border:1px solid var(--line);border-radius:3px;padding:20px 16px;text-align:center;background:rgba(255,255,255,.012)}
+  .stat b{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--gold);display:block;line-height:1}
+  .stat small{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:6px;display:block}
+
+  /* MUSIC */
+  #musica{background:linear-gradient(180deg,#110b0a,#0c0706)}
+  .music-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-bottom:46px}
+  .release{border:1px solid var(--line);border-radius:5px;overflow:hidden;background:var(--panel);transition:.3s;display:flex;flex-direction:column;cursor:pointer}
+  .release:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+  .release .thumb{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0c0807}
+  .release .thumb img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .release:hover .thumb img{transform:scale(1.05)}
+  .release .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(to top,rgba(13,9,8,.7),rgba(13,9,8,.15))}
+  .release .play .circle{width:64px;height:64px;border-radius:50%;border:1px solid var(--gold);background:rgba(13,9,8,.55);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.2rem;backdrop-filter:blur(4px);transition:.25s}
+  .release:hover .play .circle{background:var(--gold);color:var(--bg);transform:scale(1.08)}
+  .release .meta{padding:24px 26px 28px}
+  .release .meta h3{font-size:1.7rem;margin:8px 0 8px}
+  .release .meta p{color:var(--muted);font-size:.9rem}
+  .release .meta .tag{display:inline-block;margin-top:14px;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red-soft);border:1px solid rgba(192,53,46,.5);background:rgba(192,53,46,.08);padding:5px 12px;border-radius:20px}
+  .spotify-embed{border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+  .music-foot{text-align:center;margin-top:40px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+  /* AGENDA */
+  #agenda{background:linear-gradient(180deg,#0c0706,#110b0a)}
+  .events{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+  .event{display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center;border:1px solid var(--line);border-radius:5px;padding:22px 28px;background:var(--panel);transition:.25s}
+  .event:hover{border-color:var(--gold);background:rgba(201,162,75,.04)}
+  .event .date{text-align:center;min-width:64px}
+  .event .date .d{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--gold);line-height:1}
+  .event .date .m{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .event .info h4{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600}
+  .event .info p{color:var(--muted);font-size:.85rem;margin-top:2px}
+  .event .cta-mini{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);padding:9px 16px;border-radius:2px;color:var(--cream);transition:.2s;white-space:nowrap}
+  .event .cta-mini:hover{border-color:var(--gold);color:var(--gold)}
+  .events-empty{text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:6px;padding:50px}
+
+  /* CONTRATACIONES */
+  #contrataciones{background:linear-gradient(180deg,#110b0a,#0c0706)}
+  .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .book-list{list-style:none;margin:26px 0 0}
+  .book-list li{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;color:#d8d2c8}
+  .book-list li .ic{color:var(--gold);margin-top:2px}
+  .book-card{border:1px solid var(--line);border-radius:6px;padding:38px 34px;background:radial-gradient(circle at 80% 0%,rgba(201,162,75,.1),transparent 55%),var(--panel)}
+  .book-card h3{font-size:1.9rem;margin-bottom:8px}
+  .book-card p.sub{color:var(--muted);margin-bottom:26px;font-size:.92rem}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+  .field input,.field textarea{width:100%;background:#0c0807;border:1px solid var(--line);border-radius:3px;padding:13px 15px;color:var(--cream);font-family:inherit;font-size:.92rem;transition:.2s}
+  .field input:focus,.field textarea:focus{outline:none;border-color:var(--gold)}
+  .book-card .btn{width:100%;justify-content:center;margin-top:8px}
+  .form-status{margin-top:14px;text-align:center;font-size:.85rem;min-height:1.2em}
+  .form-status.ok{color:var(--gold-soft)}
+  .form-status.err{color:#e0857a}
+  .book-direct{margin-top:20px;text-align:center;font-size:.82rem;color:var(--muted)}
+  .book-direct a{color:var(--gold);border-bottom:1px solid var(--line)}
+
+  /* PRENSA */
+  #prensa{background:linear-gradient(180deg,#0c0706,#0d0908)}
+  .press-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .press{border:1px solid var(--line);border-radius:4px;padding:28px 24px;background:rgba(255,255,255,.012);transition:.28s;display:flex;flex-direction:column;justify-content:space-between;min-height:190px}
+  .press:hover{transform:translateY(-3px);border-color:var(--gold);background:rgba(201,162,75,.04)}
+  .press .outlet{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold)}
+  .press .head{font-size:.95rem;color:#d8d2c8;margin:12px 0 18px;flex-grow:1}
+  .press .read{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .press:hover .read{color:var(--gold)}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:46px}
+  .gallery .cell{aspect-ratio:4/3}
+  .gallery .cell{aspect-ratio:1;border:1px solid var(--line);border-radius:3px;overflow:hidden;cursor:pointer;position:relative;
+    background:radial-gradient(circle at 50% 35%,rgba(201,162,75,.16),transparent 60%),linear-gradient(160deg,#1e1310,#0c0807);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.6rem;transition:.25s}
+  .gallery .cell img{width:100%;height:100%;object-fit:cover}
+  .gallery .cell:hover{border-color:var(--gold);transform:scale(1.02)}
+  .gallery .cell .z{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(13,9,8,.35);opacity:0;transition:.2s;color:var(--cream)}
+  .gallery .cell:hover .z{opacity:1}
+
+  /* LIGHTBOX */
+  .lightbox{position:fixed;inset:0;z-index:200;background:rgba(8,5,4,.95);display:none;align-items:center;justify-content:center;flex-direction:column}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:88vw;max-height:78vh;border:1px solid var(--line);border-radius:4px}
+  .lightbox .lb-frame{max-width:88vw;max-height:78vh}
+  .lb-close{position:absolute;top:24px;right:30px;font-size:2rem;color:var(--cream);cursor:pointer;line-height:1}
+  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:2.4rem;color:var(--gold);cursor:pointer;padding:20px;user-select:none}
+  .lb-prev{left:14px}.lb-next{right:14px}
+  .lb-cap{color:var(--muted);margin-top:16px;font-size:.85rem;letter-spacing:.05em}
+
+  /* EPK */
+  .epk-band{border-top:1px solid var(--line);background:radial-gradient(circle at 50% 0%,rgba(201,162,75,.08),transparent 60%),#0b0706;text-align:center;padding:70px 0}
+  .epk-band h3{font-size:clamp(1.8rem,4vw,2.6rem)}
+  .epk-band p{color:var(--muted);max-width:34em;margin:14px auto 28px}
+
+  /* FOOTER */
+  footer{background:#090605;border-top:1px solid var(--line);padding:70px 0 130px;text-align:center}
+  footer .brand{font-size:2.2rem;margin-bottom:10px}
+  footer .verse{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.2rem;color:var(--gold-soft);max-width:30em;margin:0 auto 28px}
+  .socials{display:flex;gap:20px;justify-content:center;margin-bottom:28px}
+  .socials a{width:46px;height:46px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cream);transition:.25s}
+  .socials a:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-3px)}
+  .socials svg{width:18px;height:18px;fill:currentColor}
+  footer .copy{font-size:.72rem;color:var(--muted);letter-spacing:.04em}
+
+  /* FLOATING PLAYER */
+  #player{position:fixed;left:0;right:0;bottom:0;z-index:120;transform:translateY(110%);transition:transform .4s cubic-bezier(.2,.7,.3,1);
+    background:rgba(18,11,9,.96);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+  #player.show{transform:translateY(0)}
+  .player-inner{max-width:var(--maxw);margin:0 auto;padding:12px 24px;display:flex;align-items:center;gap:20px}
+  .pl-art{width:48px;height:48px;border-radius:3px;object-fit:cover;border:1px solid var(--line);flex-shrink:0}
+  .pl-meta{min-width:0;flex-shrink:0;width:190px}
+  .pl-meta .t{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--cream);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pl-meta .s{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .pl-controls{display:flex;align-items:center;gap:8px}
+  .pl-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--cream);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;font-size:.9rem}
+  .pl-btn:hover{border-color:var(--gold);color:var(--gold)}
+  .pl-btn.main{background:var(--gold);color:var(--bg);border-color:var(--gold);width:44px;height:44px}
+  .pl-bar{flex:1;height:4px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden;cursor:pointer;min-width:60px}
+  .pl-bar .fill{height:100%;width:0;background:var(--gold);transition:width .25s linear}
+  .pl-time{font-size:.7rem;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .pl-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1.2rem;padding:4px 6px}
+  .pl-close:hover{color:var(--gold)}
+  #ytHost{position:fixed;width:1px;height:1px;opacity:0;left:-9999px;pointer-events:none}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:.8s cubic-bezier(.2,.7,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}.reveal.d3{transition-delay:.24s}
+
+  @media(max-width:880px){
+    nav.links,.nav-cta{display:none}
+    .burger{display:flex}
+    .hero-grid,.bio-grid,.music-grid,.book-grid{grid-template-columns:1fr}
+    .hero-portrait{order:-1;max-width:320px;margin:0 auto}
+    .press-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}
+    section{padding:80px 0}
+    .pl-meta{width:120px}.pl-time,.pl-bar{display:none}
+    .event{grid-template-columns:auto 1fr;gap:16px}.event .cta-mini{grid-column:2;justify-self:start;margin-top:4px}
+  }
+</style>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"MusicGroup",
+  "name":"Jimmy Baruc",
+  "genre":["Christian Music","Instrumental","Gospel","Worship"],
+  "description":"Saxofonista puertorriqueño de música instrumental cristiana. Más de 25 años de trayectoria, incluyendo 19 años con Grupo Manía.",
+  "image":"https://img.youtube.com/vi/M-cueBmfkm4/maxresdefault.jpg",
+  "url":"",
+  "sameAs":[
+    "https://open.spotify.com/artist/7EsilEj1febGQ0ihw60a6Y",
+    "https://www.youtube.com/@JimmyBarucSax",
+    "https://www.instagram.com/jimmybarucsax/",
+    "https://www.facebook.com/JaimeJimmySaxBaruc"
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">Jimmy <span>Baruc</span></a>
+    <nav class="links">
+      <a href="#bio" data-i18n="nav_bio">Historia</a>
+      <a href="#musica" data-i18n="nav_music">Música</a>
+      <a href="#palabra" data-i18n="nav_palabra">Palabra</a>
+      <a href="#agenda" data-i18n="nav_agenda">Agenda</a>
+      <a href="#prensa" data-i18n="nav_press">Prensa</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <button data-lang="es" class="active">ES</button>
+        <button data-lang="en">EN</button>
+      </div>
+      <a href="#contrataciones" class="nav-cta" data-i18n="nav_book">Contratar</a>
+    </div>
+    <div class="burger" onclick="document.querySelector('nav.links').classList.toggle('open')"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" id="heroBg"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy reveal in">
+      <span class="eyebrow" data-i18n="hero_eyebrow">Saxofonista · Puerto Rico</span>
+      <h1>Jimmy <em>Baruc</em></h1>
+      <p class="tagline" data-i18n="hero_tagline">Bendecido por Dios, bendecido para bendecir.</p>
+      <p class="lede" data-i18n="hero_lede">Más de 25 años de trayectoria — del Madison Square Garden y 19 años con Grupo Manía, a una nueva etapa de música instrumental cristiana donde el saxofón se convierte en oración.</p>
+      <div class="hero-cta">
+        <button class="btn btn-gold" onclick="playTrack(0)">▶ <span data-i18n="hero_cta1">Escuchar la música</span></button>
+        <a href="#contrataciones" class="btn btn-ghost" data-i18n="hero_cta2">Contratar para tu evento</a>
+      </div>
+    </div>
+    <div class="hero-portrait reveal in" id="heroPortrait">
+      <div class="portrait-frame">
+        <img id="portraitImg" src="jimmy-portrait.jpg" alt="Jimmy Baruc, saxofonista" />
+      </div>
+      <div class="frame-badge"><b>25+</b><small data-i18n="badge">Años en tarima</small></div>
+    </div>
+  </div>
+  <div class="scroll-ind"><span data-i18n="scroll">Desliza</span><div class="line"></div></div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="marquee">
+    <span>Grupo Manía</span><span>René González</span><span>Madison Square Garden</span><span>Wilfrido Vargas</span><span>Roberto Roena</span><span>Coliseo de Puerto Rico</span><span>Centro de Bellas Artes</span><span>House of Blues</span>
+    <span>Grupo Manía</span><span>René González</span><span>Madison Square Garden</span><span>Wilfrido Vargas</span><span>Roberto Roena</span><span>Coliseo de Puerto Rico</span><span>Centro de Bellas Artes</span><span>House of Blues</span>
+  </div>
+</div>
+
+<!-- BIO -->
+<section id="bio">
+  <div class="wrap bio-grid">
+    <div class="bio-photo reveal"><img src="jimmy-bio.jpg" alt="Jimmy Baruc tocando el saxofón" style="width:100%;height:100%;object-fit:cover" /></div>
+    <div class="bio-text reveal d1">
+      <span class="eyebrow" data-i18n="bio_eyebrow">La historia</span>
+      <h2 data-i18n="bio_title">De los grandes escenarios a una nueva misión</h2>
+      <p class="first" data-i18n="bio_p1">Nacido en Chicago y criado en Vega Baja, Jimmy Baruc descubrió su pasión a los 12 años, cuando tomó un saxofón por primera vez. Esa pasión lo llevó a obtener bachilleratos en Saxofón y en Educación Musical en la Universidad de Puerto Rico, Recinto de Río Piedras.</p>
+      <p data-i18n="bio_p2">Durante casi tres décadas dejó su huella en la música latina: director musical y saxofonista de Willie Berríos, Giselle y Grupo Manía —agrupación con la que permaneció 19 años— además de colaborar con Wilfrido Vargas, Roberto Roena y Los Sabrosos del Merengue. Su talento lo llevó a tarimas como el Madison Square Garden, el Coliseo de Puerto Rico, el Centro de Bellas Artes y el House of Blues.</p>
+      <p data-i18n="bio_p3">Hoy comienza la etapa más personal de su carrera: su primera producción, «Bendecido por Dios, Bendecido para Bendecir», lleva el mensaje de la fe a través de interpretaciones instrumentales en saxofón — un ministerio musical para iglesias y escenarios dentro y fuera de Puerto Rico.</p>
+      <div class="stats">
+        <div class="stat"><b data-count="19">0</b><small data-i18n="stat1">Años con Grupo Manía</small></div>
+        <div class="stat"><b data-count="2">0</b><small data-i18n="stat2">Bachilleratos en música</small></div>
+        <div class="stat"><b data-count="25" data-suffix="+">0</b><small data-i18n="stat3">Años en tarima</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÚSICA -->
+<section id="musica">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="music_eyebrow">Discografía</span>
+      <h2 data-i18n="music_title">La música</h2>
+      <p data-i18n="music_sub">Su primer álbum cristiano se revela por etapas, sencillo a sencillo. Cada tema es un testimonio convertido en saxofón.</p>
+    </div>
+    <div class="music-grid" id="musicGrid"></div>
+    <div class="spotify-embed reveal">
+      <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/7EsilEj1febGQ0ihw60a6Y?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay;clipboard-write;encrypted-media;fullscreen;picture-in-picture" loading="lazy" title="Jimmy Baruc en Spotify"></iframe>
+    </div>
+    <div class="music-foot reveal">
+      <a class="btn btn-gold" href="lanzamiento.html" data-i18n="latest_release">▶ Último lanzamiento</a>
+      <a class="btn btn-ghost" href="https://open.spotify.com/artist/7EsilEj1febGQ0ihw60a6Y" target="_blank" rel="noopener">Spotify</a>
+      <a class="btn btn-ghost" href="https://www.youtube.com/@JimmyBarucSax" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="palabra" style="background:radial-gradient(circle at 50% 0%,rgba(192,53,46,.09),transparent 55%),linear-gradient(180deg,#110b0a,#0d0908)">
+  <div class="wrap" style="max-width:780px;text-align:center">
+    <span class="eyebrow reveal" data-i18n="palabra_eyebrow">Palabra del día</span>
+    <div class="reveal" style="margin-top:24px">
+      <div class="serif" style="font-size:3rem;color:var(--gold);line-height:.6;opacity:.7" aria-hidden="true">&ldquo;</div>
+      <p id="palabraVerso" class="serif" style="font-size:clamp(1.55rem,3.6vw,2.45rem);font-style:italic;color:var(--cream);line-height:1.42;margin-top:6px"></p>
+      <p id="palabraRef" style="margin-top:20px;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)"></p>
+    </div>
+    <div id="palabraReflexion" class="reveal" style="display:none;margin-top:36px;border-top:1px solid var(--line);padding-top:28px;max-width:42em;margin-left:auto;margin-right:auto">
+      <p style="font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red-soft);margin-bottom:12px" data-i18n="palabra_dejimmy">Reflexión de Jimmy</p>
+      <p id="palabraMensaje" style="color:#d8d2c8;font-size:1.02rem;line-height:1.85"></p>
+    </div>
+    <p class="reveal" style="margin-top:32px;font-size:.72rem;letter-spacing:.04em;color:var(--muted)" data-i18n="palabra_nota">Una palabra nueva cada día.</p>
+  </div>
+</section>
+
+<section id="agenda">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="agenda_eyebrow">Próximas fechas</span>
+      <h2 data-i18n="agenda_title">Agenda</h2>
+      <p data-i18n="agenda_sub">Dónde encontrar a Jimmy en vivo. ¿Quieres traerlo a tu iglesia o evento?</p>
+    </div>
+    <div class="events" id="eventsList"></div>
+  </div>
+</section>
+
+<!-- CONTRATACIONES -->
+<section id="contrataciones">
+  <div class="wrap book-grid">
+    <div class="book-info reveal">
+      <span class="eyebrow" data-i18n="book_eyebrow">Contrataciones</span>
+      <h2 style="font-size:clamp(2rem,4.4vw,3rem);margin-top:12px" data-i18n="book_title">Lleva el saxofón de Jimmy a tu escenario</h2>
+      <p style="color:var(--muted);margin-top:18px" data-i18n="book_sub">Disponible para servicios, conciertos, congresos y actividades especiales — en iglesias y escenarios dentro y fuera de Puerto Rico.</p>
+      <ul class="book-list">
+        <li><span class="ic">✦</span> <span data-i18n="book_l1">Servicios y noches de adoración</span></li>
+        <li><span class="ic">✦</span> <span data-i18n="book_l2">Conciertos y conferencias cristianas</span></li>
+        <li><span class="ic">✦</span> <span data-i18n="book_l3">Bodas, aniversarios y eventos privados</span></li>
+        <li><span class="ic">✦</span> <span data-i18n="book_l4">Participaciones especiales y colaboraciones</span></li>
+      </ul>
+    </div>
+    <div class="book-card reveal d1">
+      <h3 data-i18n="form_title">Solicita una fecha</h3>
+      <p class="sub" data-i18n="form_sub">Cuéntanos sobre tu evento y te contactamos pronto.</p>
+      <form id="bookingForm">
+        <div class="field"><label data-i18n="f_name">Nombre / Iglesia o entidad</label><input type="text" name="nombre" required /></div>
+        <div class="field"><label data-i18n="f_contact">Correo o WhatsApp</label><input type="text" name="contacto" required /></div>
+        <div class="field"><label data-i18n="f_date">Fecha y tipo de evento</label><input type="text" name="fecha" data-i18n-ph="f_date_ph" placeholder="Ej: Concierto de adoración — agosto 2026" /></div>
+        <div class="field"><label data-i18n="f_msg">Mensaje</label><textarea name="mensaje" rows="3"></textarea></div>
+        <button type="submit" class="btn btn-gold" data-i18n="f_send">Enviar solicitud</button>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+      <p class="book-direct" data-i18n="form_direct">O escríbenos directo por <a href="https://www.instagram.com/jimmybarucsax/" target="_blank" rel="noopener">Instagram</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- PRENSA -->
+<section id="prensa">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="press_eyebrow">En los medios</span>
+      <h2 data-i18n="press_title">Prensa</h2>
+      <p data-i18n="press_sub">Su nueva etapa ha sido reseñada por los principales medios de Puerto Rico.</p>
+    </div>
+    <div class="press-grid">
+      <a class="press reveal" href="https://www.elnuevodia.com/entretenimiento/musica/notas/no-has-terminado-conmigo-el-junte-espiritual-de-jimmy-baruc-y-rene-gonzalez-en-tiempos-de-reflexion/" target="_blank" rel="noopener">
+        <div class="outlet">El Nuevo Día</div><div class="head">«El junte espiritual de Jimmy Baruc y René González en tiempos de reflexión.»</div><div class="read" data-i18n="read">Leer nota →</div></a>
+      <a class="press reveal d1" href="https://www.primerahora.com/entretenimiento/musica/notas/jimmy-baruc-vive-el-privilegio-de-grabar-con-rene-gonzalez-en-no-has-terminado-conmigo/" target="_blank" rel="noopener">
+        <div class="outlet">Primera Hora</div><div class="head">«Jimmy Baruc vive el privilegio de grabar con René González.»</div><div class="read" data-i18n="read">Leer nota →</div></a>
+      <a class="press reveal d2" href="https://www.metro.pr/entretenimiento/2025/04/14/jimmy-baruc-lanza-su-primer-sencillo-instrumental-cristiano-con-abres-camino/" target="_blank" rel="noopener">
+        <div class="outlet">Metro PR</div><div class="head">«Lanza su primer sencillo instrumental cristiano con Abres Camino.»</div><div class="read" data-i18n="read">Leer nota →</div></a>
+      <a class="press reveal" href="https://prpop.org/2026/04/jimmy-baruc-presenta-no-has-terminado-conmigo/" target="_blank" rel="noopener">
+        <div class="outlet">Cultura Popular</div><div class="head">«Jimmy Baruc presenta No has terminado conmigo.»</div><div class="read" data-i18n="read">Leer nota →</div></a>
+      <a class="press reveal d1" href="https://www.elvocero.com/escenario/jimmy-baruc-estrena-su-versi-n-instrumental-de-abres-camino/article_720b2ee5-727e-4cea-b6a8-6e3b0491e179.html" target="_blank" rel="noopener">
+        <div class="outlet">El Vocero</div><div class="head">«Estrena su versión instrumental de Abres Camino.»</div><div class="read" data-i18n="read">Leer nota →</div></a>
+      <a class="press reveal d2" href="https://wapa.tv/programas/pegate/jimmy-baruc-presenta-no-has-terminado-conmigo-y-graba-junto-a-ren-gonz-lez/article_0c85f46b-2534-4a89-a2c7-be59b3fb1168.html" target="_blank" rel="noopener">
+        <div class="outlet">Wapa TV</div><div class="head">«Presenta No Has Terminado Conmigo y graba junto a René González.»</div><div class="read" data-i18n="watch">Ver entrevista →</div></a>
+    </div>
+    <div class="gallery reveal" id="gallery"></div>
+    <p style="text-align:center;color:var(--muted);font-size:.76rem;margin-top:18px" data-i18n="gallery_note">Galería — añade fotos profesionales de conciertos y estudio editando el arreglo GALLERY en el código.</p>
+  </div>
+</section>
+
+<!-- EPK -->
+<div class="epk-band">
+  <div class="wrap reveal">
+    <span class="eyebrow" data-i18n="epk_eyebrow">Para prensa e iglesias</span>
+    <h3 data-i18n="epk_title">Press Kit / EPK</h3>
+    <p data-i18n="epk_sub">Descarga la hoja de prensa con biografía, trayectoria, sencillos y contacto — lista para compartir con medios y organizadores.</p>
+    <button class="btn btn-gold" onclick="downloadEPK()">↓ <span data-i18n="epk_btn">Descargar EPK (PDF)</span></button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="contacto">
+  <div class="wrap">
+    <div class="brand serif">Jimmy <span class="gold">Baruc</span></div>
+    <p class="verse" data-i18n="verse">«Dios todavía está trabajando conmigo. Él es el alfarero que sigue moldeando nuestra vida.»</p>
+    <div class="socials">
+      <a href="https://www.instagram.com/jimmybarucsax/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.86s0 3.6-.07 4.86c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.9.07s-3.6 0-4.86-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.21 15.6 2.2 15.2 2.2 12s0-3.6.07-4.86c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.21 8.8 2.2 12 2.2Zm0 1.95c-3.14 0-3.51.01-4.75.07-.9.04-1.39.2-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.12.32-.28.81-.32 1.71-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.04.9.2 1.39.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.12.81.28 1.71.32 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c.9-.04 1.39-.2 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.12-.32.28-.81.32-1.71.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.04-.9-.2-1.39-.32-1.71a2.85 2.85 0 0 0-.69-1.06 2.85 2.85 0 0 0-1.06-.69c-.32-.12-.81-.28-1.71-.32-1.24-.06-1.61-.07-4.75-.07Zm0 3.32a4.53 4.53 0 1 1 0 9.06 4.53 4.53 0 0 1 0-9.06Zm0 1.96a2.57 2.57 0 1 0 0 5.14 2.57 2.57 0 0 0 0-5.14Zm5.77-.36a1.06 1.06 0 1 1-2.12 0 1.06 1.06 0 0 1 2.12 0Z"/></svg></a>
+      <a href="https://www.youtube.com/@JimmyBarucSax" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></svg></a>
+      <a href="https://open.spotify.com/artist/7EsilEj1febGQ0ihw60a6Y" target="_blank" rel="noopener" aria-label="Spotify"><svg viewBox="0 0 24 24"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24Zm5.5 17.3a.75.75 0 0 1-1.03.25c-2.82-1.72-6.36-2.11-10.54-1.16a.75.75 0 1 1-.33-1.46c4.56-1.04 8.48-.59 11.65 1.34.35.22.46.68.25 1.03Zm1.47-3.27a.94.94 0 0 1-1.29.31c-3.23-1.98-8.15-2.56-11.97-1.4a.94.94 0 1 1-.54-1.8c4.37-1.31 9.79-.67 13.5 1.6.44.27.58.85.3 1.29Zm.13-3.4C15.27 8.34 8.82 8.13 5.1 9.26a1.12 1.12 0 1 1-.65-2.15c4.27-1.3 11.4-1.05 15.9 1.62a1.12 1.12 0 1 1-1.15 1.93Z"/></svg></a>
+      <a href="https://www.facebook.com/JaimeJimmySaxBaruc" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.92-1.95 1.87V12h3.32l-.53 3.47h-2.79v8.38A12 12 0 0 0 24 12Z"/></svg></a>
+    </div>
+    <p class="copy">© 2026 Jimmy Baruc · Saxofonista · Puerto Rico</p>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <span class="lb-close" onclick="closeLB()">×</span>
+  <span class="lb-nav lb-prev" onclick="navLB(-1)">‹</span>
+  <span class="lb-nav lb-next" onclick="navLB(1)">›</span>
+  <div id="lbBody"></div>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<!-- FLOATING PLAYER -->
+<div id="player">
+  <div class="player-inner">
+    <img class="pl-art" id="plArt" src="" alt="" />
+    <div class="pl-meta"><div class="t" id="plTitle">—</div><div class="s" id="plSub">Jimmy Baruc</div></div>
+    <div class="pl-controls">
+      <button class="pl-btn" onclick="prevTrack()" aria-label="Anterior">⏮</button>
+      <button class="pl-btn main" id="plPlay" onclick="togglePlay()" aria-label="Play/Pausa">▶</button>
+      <button class="pl-btn" onclick="nextTrack()" aria-label="Siguiente">⏭</button>
+    </div>
+    <div class="pl-bar" id="plBar"><div class="fill" id="plFill"></div></div>
+    <div class="pl-time" id="plTime">0:00 / 0:00</div>
+    <button class="pl-close" onclick="closePlayer()" aria-label="Cerrar">×</button>
+  </div>
+</div>
+<div id="ytHost"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+/* ============================================================
+   CONFIGURACIÓN — Andrés, edita solo este bloque
+   ============================================================ */
+const CONFIG = {
+  bookingEmail: "CORREO_DE_JIMMY@ejemplo.com",        // <-- correo real para el formulario
+  formspreeId:  "TU_ID_FORMSPREE",                    // <-- crea uno gratis en formspree.io y pégalo
+
+  // FOTO DEL RETRATO (columna derecha del hero)
+  portrait: "jimmy-portrait.jpg",                     // <-- foto vertical de Jimmy (columna derecha del hero)
+
+  // FOTOS DEL HERO DE FONDO — rotan difuminadas detrás del título.
+  // Cámbialas por lanzamiento.
+  heroImages: [
+    "sax-rojo.jpg",
+    "waymaker.jpg",
+  ],
+  heroInterval: 6000,                                 // ms entre cada foto
+};
+
+const TRACKS = [
+  { title:"No Has Terminado Conmigo", year:"2026", tagES:"★ Con René González", tagEN:"★ Feat. René González",
+    ytId:"", // <-- pega aquí el ID del video de YouTube cuando esté publicado
+    spotify:"https://open.spotify.com/artist/7EsilEj1febGQ0ihw60a6Y",
+    thumb:"sax-rojo.jpg",
+    descES:"Versión instrumental del clásico de René González — quien participa en esta nueva grabación. Una de las composiciones más queridas de la música cristiana.",
+    descEN:"Instrumental sax version of René González's classic — featuring René himself. One of the most beloved songs in Christian music." },
+  { title:"Abres Camino", year:"2025", tagES:"Primer sencillo", tagEN:"Debut single",
+    ytId:"M-cueBmfkm4",
+    spotify:"https://open.spotify.com/artist/7EsilEj1febGQ0ihw60a6Y",
+    thumb:"waymaker.jpg",
+    descES:"Su primer sencillo instrumental cristiano. Una versión en saxofón del himno «Way Maker», grabada con coros en español e inglés para alcance global.",
+    descEN:"His debut Christian instrumental single. A sax rendition of the hymn 'Way Maker', recorded with Spanish and English choirs for global reach." },
+];
+
+const EVENTS = [
+  // Ejemplos — reemplaza por fechas reales (deja [] para mostrar el estado "próximamente")
+  { day:"—", month:"Próx.", titleES:"Próximas fechas en anuncio", titleEN:"Dates being announced",
+    placeES:"Síguelo en redes para enterarte primero", placeEN:"Follow on social media for updates",
+    link:"https://www.instagram.com/jimmybarucsax/", ctaES:"Seguir", ctaEN:"Follow" },
+];
+
+const GALLERY = [
+  // Añade URLs de fotos: { src:"https://...", capES:"En concierto", capEN:"Live" }
+  { src:"jimmy-stage.jpg", capES:"Jimmy Baruc — saxofón rojo", capEN:"Jimmy Baruc — red saxophone" },
+  { src:"waymaker.jpg", capES:"Abres Camino (Waymaker) — portada", capEN:"Abres Camino (Waymaker) — cover" },
+  { src:"sax-rojo.jpg", capES:"No Has Terminado Conmigo — portada", capEN:"No Has Terminado Conmigo — cover" },
+];
+
+/* ============================================================
+   i18n
+   ============================================================ */
+const I18N = {
+  es:{ nav_bio:"Historia",nav_music:"Música",nav_palabra:"Palabra",nav_agenda:"Agenda",nav_press:"Prensa",nav_book:"Contratar",
+    palabra_eyebrow:"Palabra del día",palabra_dejimmy:"Reflexión de Jimmy",palabra_nota:"Una palabra nueva cada día.",
+    hero_eyebrow:"Saxofonista · Puerto Rico",hero_tagline:"Bendecido por Dios, bendecido para bendecir.",
+    hero_lede:"Más de 25 años de trayectoria — del Madison Square Garden y 19 años con Grupo Manía, a una nueva etapa de música instrumental cristiana donde el saxofón se convierte en oración.",
+    hero_cta1:"Escuchar la música",hero_cta2:"Contratar para tu evento",badge:"Años en tarima",scroll:"Desliza",
+    bio_eyebrow:"La historia",bio_title:"De los grandes escenarios a una nueva misión",
+    bio_p1:"Nacido en Chicago y criado en Vega Baja, Jimmy Baruc descubrió su pasión a los 12 años, cuando tomó un saxofón por primera vez. Esa pasión lo llevó a obtener bachilleratos en Saxofón y en Educación Musical en la Universidad de Puerto Rico, Recinto de Río Piedras.",
+    bio_p2:"Durante casi tres décadas dejó su huella en la música latina: director musical y saxofonista de Willie Berríos, Giselle y Grupo Manía —agrupación con la que permaneció 19 años— además de colaborar con Wilfrido Vargas, Roberto Roena y Los Sabrosos del Merengue. Su talento lo llevó a tarimas como el Madison Square Garden, el Coliseo de Puerto Rico, el Centro de Bellas Artes y el House of Blues.",
+    bio_p3:"Hoy comienza la etapa más personal de su carrera: su primera producción, «Bendecido por Dios, Bendecido para Bendecir», lleva el mensaje de la fe a través de interpretaciones instrumentales en saxofón — un ministerio musical para iglesias y escenarios dentro y fuera de Puerto Rico.",
+    stat1:"Años con Grupo Manía",stat2:"Bachilleratos en música",stat3:"Años en tarima",
+    music_eyebrow:"Discografía",music_title:"La música",music_sub:"Su primer álbum cristiano se revela por etapas, sencillo a sencillo. Cada tema es un testimonio convertido en saxofón.",latest_release:"▶ Último lanzamiento",
+    agenda_eyebrow:"Próximas fechas",agenda_title:"Agenda",agenda_sub:"Dónde encontrar a Jimmy en vivo. ¿Quieres traerlo a tu iglesia o evento?",
+    book_eyebrow:"Contrataciones",book_title:"Lleva el saxofón de Jimmy a tu escenario",book_sub:"Disponible para servicios, conciertos, congresos y actividades especiales — en iglesias y escenarios dentro y fuera de Puerto Rico.",
+    book_l1:"Servicios y noches de adoración",book_l2:"Conciertos y conferencias cristianas",book_l3:"Bodas, aniversarios y eventos privados",book_l4:"Participaciones especiales y colaboraciones",
+    form_title:"Solicita una fecha",form_sub:"Cuéntanos sobre tu evento y te contactamos pronto.",
+    f_name:"Nombre / Iglesia o entidad",f_contact:"Correo o WhatsApp",f_date:"Fecha y tipo de evento",f_date_ph:"Ej: Concierto de adoración — agosto 2026",f_msg:"Mensaje",f_send:"Enviar solicitud",
+    form_direct:'O escríbenos directo por <a href="https://www.instagram.com/jimmybarucsax/" target="_blank" rel="noopener">Instagram</a>',
+    press_eyebrow:"En los medios",press_title:"Prensa",press_sub:"Su nueva etapa ha sido reseñada por los principales medios de Puerto Rico.",read:"Leer nota →",watch:"Ver entrevista →",
+    gallery_note:"Más fotos próximamente.",
+    epk_eyebrow:"Para prensa e iglesias",epk_title:"Press Kit / EPK",epk_sub:"Descarga la hoja de prensa con biografía, trayectoria, sencillos y contacto — lista para compartir con medios y organizadores.",epk_btn:"Descargar EPK (PDF)",
+    verse:"«Dios todavía está trabajando conmigo. Él es el alfarero que sigue moldeando nuestra vida.»",
+    sent:"¡Solicitud enviada! Te contactaremos pronto.",senderr:"No se pudo enviar. Escríbenos por Instagram." },
+  en:{ nav_bio:"Story",nav_music:"Music",nav_palabra:"Daily Word",nav_agenda:"Tour",nav_press:"Press",nav_book:"Book",
+    palabra_eyebrow:"Word of the day",palabra_dejimmy:"From Jimmy",palabra_nota:"A fresh word every day.",
+    hero_eyebrow:"Saxophonist · Puerto Rico",hero_tagline:"Blessed by God, blessed to bless.",
+    hero_lede:"Over 25 years on stage — from Madison Square Garden and 19 years with Grupo Manía to a new chapter of Christian instrumental music, where the saxophone becomes prayer.",
+    hero_cta1:"Listen to the music",hero_cta2:"Book for your event",badge:"Years on stage",scroll:"Scroll",
+    bio_eyebrow:"The story",bio_title:"From the biggest stages to a new mission",
+    bio_p1:"Born in Chicago and raised in Vega Baja, Jimmy Baruc found his passion at age 12 when he first picked up a saxophone. That passion led him to earn bachelor's degrees in Saxophone and Music Education at the University of Puerto Rico, Río Piedras.",
+    bio_p2:"For nearly three decades he left his mark on Latin music: music director and saxophonist for Willie Berríos, Giselle and Grupo Manía —where he stayed for 19 years— and collaborator with Wilfrido Vargas, Roberto Roena and Los Sabrosos del Merengue. His talent took him to stages like Madison Square Garden, the Coliseo de Puerto Rico, the Center for Fine Arts and House of Blues.",
+    bio_p3:"Today he begins the most personal chapter of his career: his debut production, 'Blessed by God, Blessed to Bless,' carries a message of faith through instrumental saxophone interpretations — a musical ministry for churches and stages in Puerto Rico and beyond.",
+    stat1:"Years with Grupo Manía",stat2:"Music degrees",stat3:"Years on stage",
+    music_eyebrow:"Discography",music_title:"The music",music_sub:"His debut Christian album unfolds in stages, single by single. Each track is a testimony turned into saxophone.",latest_release:"▶ Latest release",
+    agenda_eyebrow:"Upcoming dates",agenda_title:"Tour",agenda_sub:"Where to catch Jimmy live. Want to bring him to your church or event?",
+    book_eyebrow:"Booking",book_title:"Bring Jimmy's saxophone to your stage",book_sub:"Available for services, concerts, conferences and special events — at churches and stages in Puerto Rico and beyond.",
+    book_l1:"Services and worship nights",book_l2:"Christian concerts and conferences",book_l3:"Weddings, anniversaries and private events",book_l4:"Special guest appearances and collaborations",
+    form_title:"Request a date",form_sub:"Tell us about your event and we'll get back to you soon.",
+    f_name:"Name / Church or organization",f_contact:"Email or WhatsApp",f_date:"Date & type of event",f_date_ph:"e.g. Worship concert — August 2026",f_msg:"Message",f_send:"Send request",
+    form_direct:'Or reach us directly on <a href="https://www.instagram.com/jimmybarucsax/" target="_blank" rel="noopener">Instagram</a>',
+    press_eyebrow:"In the media",press_title:"Press",press_sub:"His new chapter has been covered by Puerto Rico's leading outlets.",read:"Read →",watch:"Watch →",
+    gallery_note:"More photos coming soon.",
+    epk_eyebrow:"For press & churches",epk_title:"Press Kit / EPK",epk_sub:"Download the press sheet with bio, career, singles and contact — ready to share with media and organizers.",epk_btn:"Download EPK (PDF)",
+    verse:"\"God isn't finished with me. He is the potter who keeps shaping our lives.\"",
+    sent:"Request sent! We'll be in touch soon.",senderr:"Couldn't send. Reach us on Instagram." },
+};
+let LANG = (localStorage.getItem('jb_lang')) || (navigator.language||'es').slice(0,2);
+if(!I18N[LANG]) LANG='es';
+
+function applyLang(){
+  const d=I18N[LANG];
+  document.documentElement.lang=LANG;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.getAttribute('data-i18n'); if(d[k]!=null) el.innerHTML=d[k]; });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{ const k=el.getAttribute('data-i18n-ph'); if(d[k]!=null) el.placeholder=d[k]; });
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===LANG));
+  renderMusic(); renderEvents(); renderGallery();
+  localStorage.setItem('jb_lang',LANG);
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>{LANG=b.dataset.lang;applyLang();}));
+
+/* ============ RENDER ============ */
+function renderMusic(){
+  const g=document.getElementById('musicGrid'); const d=I18N[LANG];
+  g.innerHTML=TRACKS.map((t,i)=>`
+    <div class="release reveal in" onclick="playTrack(${i})">
+      <div class="thumb"><img src="${t.thumb}" alt="${t.title}"><div class="play"><div class="circle">▶</div></div></div>
+      <div class="meta">
+        <span class="eyebrow" style="font-size:.6rem">${LANG==='es'?'Sencillo':'Single'} · ${t.year}</span>
+        <h3>${t.title}</h3>
+        <p>${LANG==='es'?t.descES:t.descEN}</p>
+        <span class="tag">${LANG==='es'?t.tagES:t.tagEN}</span>
+      </div>
+    </div>`).join('');
+}
+function renderEvents(){
+  const c=document.getElementById('eventsList');
+  if(!EVENTS.length){ c.innerHTML=`<div class="events-empty">${LANG==='es'?'Próximas fechas en anuncio. Síguelo en redes.':'Dates being announced. Follow on social media.'}</div>`; return; }
+  c.innerHTML=EVENTS.map(e=>`
+    <div class="event reveal in">
+      <div class="date"><div class="d">${e.day}</div><div class="m">${e.month}</div></div>
+      <div class="info"><h4>${LANG==='es'?e.titleES:e.titleEN}</h4><p>${LANG==='es'?e.placeES:e.placeEN}</p></div>
+      <a class="cta-mini" href="${e.link}" target="_blank" rel="noopener">${LANG==='es'?e.ctaES:e.ctaEN}</a>
+    </div>`).join('');
+}
+function renderGallery(){
+  const g=document.getElementById('gallery');
+  g.innerHTML=GALLERY.map((x,i)=>`
+    <div class="cell" onclick="openLB(${i})">
+      ${x.src?`<img src="${x.src}" alt="">`:`<span>${x.icon||'✦'}</span>`}
+      <div class="z">⤢</div>
+    </div>`).join('');
+}
+
+/* ============ LIGHTBOX ============ */
+let lbIdx=0;
+function openLB(i){ lbIdx=i; showLB(); document.getElementById('lightbox').classList.add('open'); }
+function closeLB(){ document.getElementById('lightbox').classList.remove('open'); }
+function navLB(dir){ lbIdx=(lbIdx+dir+GALLERY.length)%GALLERY.length; showLB(); }
+function showLB(){
+  const x=GALLERY[lbIdx];
+  document.getElementById('lbBody').innerHTML = x.src
+    ? `<img src="${x.src}" alt="">`
+    : `<div class="lb-frame" style="width:60vw;height:60vh;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:4px;font-size:5rem;color:var(--gold)">${x.icon||'✦'}</div>`;
+  document.getElementById('lbCap').textContent = LANG==='es'?x.capES:x.capEN;
+}
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lightbox').classList.contains('open'))return;
+  if(e.key==='Escape')closeLB(); if(e.key==='ArrowRight')navLB(1); if(e.key==='ArrowLeft')navLB(-1);
+});
+
+/* ============ FLOATING PLAYER (YouTube IFrame API) ============ */
+let ytPlayer=null, ytReady=false, curTrack=0, isPlaying=false, progTimer=null, pendingPlay=null;
+window.onYouTubeIframeAPIReady=function(){
+  ytPlayer=new YT.Player('ytHost',{height:'1',width:'1',playerVars:{playsinline:1},
+    events:{ onReady:()=>{ytReady=true; if(pendingPlay!=null){const p=pendingPlay;pendingPlay=null;playTrack(p);}},
+      onStateChange:onYTState }});
+};
+(function loadYT(){var s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';document.head.appendChild(s);})();
+
+function onYTState(e){
+  if(e.data===YT.PlayerState.PLAYING){isPlaying=true;updatePlayBtn();startProg();}
+  else if(e.data===YT.PlayerState.PAUSED){isPlaying=false;updatePlayBtn();stopProg();}
+  else if(e.data===YT.PlayerState.ENDED){nextTrack();}
+}
+function playTrack(i){
+  const t=TRACKS[i];
+  if(!t.ytId){ // sin video: abrir Spotify
+    window.open(t.spotify,'_blank'); return;
+  }
+  curTrack=i;
+  document.getElementById('player').classList.add('show');
+  document.getElementById('plArt').src=t.thumb;
+  document.getElementById('plTitle').textContent=t.title;
+  if(!ytReady){pendingPlay=i;return;}
+  ytPlayer.loadVideoById(t.ytId);
+  ytPlayer.playVideo();
+}
+function togglePlay(){ if(!ytReady)return; if(isPlaying)ytPlayer.pauseVideo();else ytPlayer.playVideo(); }
+function nextTrack(){ const withVid=TRACKS.map((t,i)=>i).filter(i=>TRACKS[i].ytId); if(!withVid.length)return;
+  let n=withVid[(withVid.indexOf(curTrack)+1+withVid.length)%withVid.length]; playTrack(n); }
+function prevTrack(){ const withVid=TRACKS.map((t,i)=>i).filter(i=>TRACKS[i].ytId); if(!withVid.length)return;
+  let n=withVid[(withVid.indexOf(curTrack)-1+withVid.length)%withVid.length]; playTrack(n); }
+function closePlayer(){ if(ytReady)ytPlayer.pauseVideo(); document.getElementById('player').classList.remove('show'); }
+function updatePlayBtn(){ document.getElementById('plPlay').textContent=isPlaying?'⏸':'▶'; }
+function startProg(){ stopProg(); progTimer=setInterval(()=>{ if(!ytReady)return;
+  const c=ytPlayer.getCurrentTime()||0, d=ytPlayer.getDuration()||0;
+  document.getElementById('plFill').style.width=(d?c/d*100:0)+'%';
+  document.getElementById('plTime').textContent=fmt(c)+' / '+fmt(d); },500); }
+function stopProg(){ if(progTimer)clearInterval(progTimer); }
+function fmt(s){s=Math.floor(s||0);return Math.floor(s/60)+':'+('0'+(s%60)).slice(-2);}
+document.getElementById('plBar').addEventListener('click',e=>{ if(!ytReady)return;
+  const r=e.currentTarget.getBoundingClientRect(); const p=(e.clientX-r.left)/r.width;
+  ytPlayer.seekTo((ytPlayer.getDuration()||0)*p,true); });
+
+/* ============ FORM (Formspree AJAX) ============ */
+document.getElementById('bookingForm').addEventListener('submit',async function(e){
+  e.preventDefault(); const d=I18N[LANG]; const st=document.getElementById('formStatus');
+  const f=e.target; const data=Object.fromEntries(new FormData(f));
+  if(CONFIG.formspreeId && CONFIG.formspreeId!=='TU_ID_FORMSPREE'){
+    try{
+      const r=await fetch('https://formspree.io/f/'+CONFIG.formspreeId,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)});
+      if(r.ok){ st.className='form-status ok'; st.textContent=d.sent; f.reset(); }
+      else throw new Error();
+    }catch{ st.className='form-status err'; st.textContent=d.senderr; }
+  } else {
+    // Fallback: abre el correo
+    const subj=encodeURIComponent('Solicitud de contratación — '+(data.nombre||''));
+    const body=encodeURIComponent('Nombre/Entidad: '+data.nombre+'\nContacto: '+data.contacto+'\nFecha/tipo: '+data.fecha+'\n\nMensaje:\n'+(data.mensaje||''));
+    window.location.href='mailto:'+CONFIG.bookingEmail+'?subject='+subj+'&body='+body;
+    st.className='form-status ok'; st.textContent=d.sent;
+  }
+});
+
+/* ============ EPK PDF ============ */
+function downloadEPK(){
+  const { jsPDF }=window.jspdf; const doc=new jsPDF({unit:'pt',format:'letter'});
+  const W=612, M=56; let y=70;
+  doc.setFillColor(10,14,13); doc.rect(0,0,W,792,'F');
+  doc.setTextColor(201,162,75); doc.setFont('times','bold'); doc.setFontSize(34); doc.text('JIMMY BARUC',M,y);
+  doc.setFont('helvetica','normal'); doc.setFontSize(11); doc.setTextColor(230,207,149);
+  y+=22; doc.text('Saxofonista  ·  Música Instrumental Cristiana  ·  Puerto Rico',M,y);
+  doc.setDrawColor(201,162,75); doc.setLineWidth(.8); y+=16; doc.line(M,y,W-M,y);
+  const para=(title,txt,yy)=>{ doc.setTextColor(201,162,75);doc.setFont('helvetica','bold');doc.setFontSize(11);doc.text(title.toUpperCase(),M,yy);
+    doc.setTextColor(225,225,220);doc.setFont('helvetica','normal');doc.setFontSize(10.5);
+    const lines=doc.splitTextToSize(txt,W-2*M); doc.text(lines,M,yy+16); return yy+16+lines.length*14+14; };
+  y+=30;
+  y=para('Biografía','Nacido en Chicago y criado en Vega Baja, Puerto Rico, Jimmy Baruc descubrió su pasión por el saxofón a los 12 años. Obtuvo bachilleratos en Saxofón y en Educación Musical (UPR, Río Piedras). Durante casi tres décadas fue director musical y saxofonista de Willie Berríos, Giselle y Grupo Manía (19 años), colaborando con Wilfrido Vargas, Roberto Roena y Los Sabrosos del Merengue. Hoy lidera una nueva etapa de música instrumental cristiana.',y);
+  y=para('Escenarios','Madison Square Garden (NY), Coliseo de Puerto Rico José Miguel Agrelot, Centro de Bellas Artes de Santurce, Coliseo Roberto Clemente y House of Blues (Orlando, Nueva Orleans).',y);
+  y=para('Producción actual','«Bendecido por Dios, Bendecido para Bendecir» — primer álbum instrumental cristiano, lanzado por sencillos. Incluye "Abres Camino" (2025) y "No Has Terminado Conmigo" (2026), grabado junto al pastor y cantautor René González.',y);
+  y=para('Disponible para','Servicios y noches de adoración · Conciertos y conferencias cristianas · Bodas y eventos privados · Participaciones especiales — en Puerto Rico y el exterior.',y);
+  doc.setDrawColor(201,162,75);doc.line(M,y,W-M,y); y+=22;
+  doc.setTextColor(201,162,75);doc.setFont('helvetica','bold');doc.setFontSize(11);doc.text('CONTACTO',M,y);
+  doc.setTextColor(225,225,220);doc.setFont('helvetica','normal');doc.setFontSize(10.5);
+  doc.text('Instagram: @jimmybarucsax   ·   YouTube: @JimmyBarucSax\nSpotify: Jimmy Baruc   ·   '+CONFIG.bookingEmail,M,y+16);
+  doc.setTextColor(150,160,155);doc.setFontSize(8.5);doc.text('© 2026 Jimmy Baruc — Bendecido para bendecir.',M,770);
+  doc.save('EPK-Jimmy-Baruc.pdf');
+}
+
+/* ============ ANIMATIONS ============ */
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{ nav.classList.toggle('scrolled',scrollY>30);
+  const hp=document.getElementById('heroPortrait'); if(hp&&scrollY<700)hp.style.transform='translateY('+scrollY*0.06+'px)'; });
+const io=new IntersectionObserver(es=>{es.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in');
+  if(e.target.querySelector&&e.target.querySelectorAll('[data-count]').length)countUp(e.target); io.unobserve(e.target);} });},{threshold:.12});
+function obs(){ document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el)); }
+function countUp(scope){ scope.querySelectorAll('[data-count]').forEach(el=>{ const target=+el.dataset.count, suf=el.dataset.suffix||''; let n=0;
+  const step=Math.max(1,Math.round(target/30)); const t=setInterval(()=>{ n+=step; if(n>=target){n=target;clearInterval(t);} el.textContent=n+suf; },28); }); }
+
+/* ============ HERO PHOTO ============ */
+function heroInit(){
+  if(CONFIG.portrait) document.getElementById('portraitImg').src=CONFIG.portrait;
+  const bg=document.getElementById('heroBg');
+  const imgs=(CONFIG.heroImages&&CONFIG.heroImages.length)?CONFIG.heroImages
+            :(CONFIG.portrait?[CONFIG.portrait]:['https://img.youtube.com/vi/M-cueBmfkm4/maxresdefault.jpg']);
+  bg.innerHTML=imgs.map((u,i)=>`<div class="slide${i===0?' on':''}" style="background-image:url('${u}')"></div>`).join('');
+  if(imgs.length>1){
+    let idx=0; const slides=bg.querySelectorAll('.slide');
+    setInterval(()=>{ slides[idx].classList.remove('on'); idx=(idx+1)%slides.length; slides[idx].classList.add('on'); },CONFIG.heroInterval||6000);
+  }
+}
+
+/* ============ PALABRA DEL DÍA ============ */
+/* Versículos en dominio público (Reina-Valera 1909). Rota uno por día. */
+const DEVOCIONALES=[
+  {v:"Jehová es mi pastor; nada me faltará.",r:"Salmos 23:1"},
+  {v:"Todo lo puedo en Cristo que me fortalece.",r:"Filipenses 4:13"},
+  {v:"No temas, que yo soy contigo; no desmayes, que yo soy tu Dios que te esfuerzo.",r:"Isaías 41:10"},
+  {v:"Fíate de Jehová de todo tu corazón, y no estribes en tu prudencia.",r:"Proverbios 3:5"},
+  {v:"Venid a mí todos los que estáis trabajados y cargados, y yo os haré descansar.",r:"Mateo 11:28"},
+  {v:"Esfuérzate y sé valiente; Jehová tu Dios será contigo dondequiera que fueres.",r:"Josué 1:9"},
+  {v:"Este es el día que hizo Jehová; nos gozaremos y alegraremos en él.",r:"Salmos 118:24"},
+  {v:"Los que esperan a Jehová tendrán nuevas fuerzas; levantarán las alas como águilas.",r:"Isaías 40:31"},
+  {v:"Dios es nuestro amparo y fortaleza, nuestro pronto auxilio en las tribulaciones.",r:"Salmos 46:1"},
+  {v:"Sé que los pensamientos que tengo acerca de vosotros son de paz, y no de mal.",r:"Jeremías 29:11"},
+  {v:"Jehová es mi luz y mi salvación; ¿de quién temeré?",r:"Salmos 27:1"},
+  {v:"A los que a Dios aman, todas las cosas les ayudan a bien.",r:"Romanos 8:28"},
+  {v:"Pon tu delicia en Jehová, y él te dará las peticiones de tu corazón.",r:"Salmos 37:4"},
+  {v:"Por nada estéis afanosos; sean notorias vuestras peticiones delante de Dios.",r:"Filipenses 4:6"},
+  {v:"El que habita al abrigo del Altísimo morará bajo la sombra del Omnipotente.",r:"Salmos 91:1"},
+  {v:"Encomienda a Jehová tus obras, y tus pensamientos serán afirmados.",r:"Proverbios 16:3"},
+  {v:"Gustad, y ved que es bueno Jehová.",r:"Salmos 34:8"},
+  {v:"Buscad primeramente el reino de Dios, y todas estas cosas os serán añadidas.",r:"Mateo 6:33"},
+  {v:"Lámpara es a mis pies tu palabra, y lumbrera a mi camino.",r:"Salmos 119:105"},
+  {v:"Tú guardarás en completa paz a aquel cuyo pensamiento en ti persevera.",r:"Isaías 26:3"},
+  {v:"Mi socorro viene de Jehová, que hizo los cielos y la tierra.",r:"Salmos 121:2"},
+  {v:"Por la misericordia de Jehová nunca decaímos; nuevas son cada mañana.",r:"Lamentaciones 3:22-23"},
+  {v:"No nos cansemos de hacer bien, que a su tiempo segaremos si no desmayamos.",r:"Gálatas 6:9"},
+  {v:"Jehová es mi fortaleza y mi escudo; en él esperó mi corazón, y fui ayudado.",r:"Salmos 28:7"},
+  {v:"La fe es la sustancia de lo que se espera, la demostración de lo que no se ve.",r:"Hebreos 11:1"},
+  {v:"El gozo de Jehová es vuestra fortaleza.",r:"Nehemías 8:10"},
+  {v:"Echando toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.",r:"1 Pedro 5:7"},
+  {v:"Echa sobre Jehová tu carga, y él te sustentará.",r:"Salmos 55:22"},
+  {v:"Así alumbre vuestra luz delante de los hombres.",r:"Mateo 5:16"},
+  {v:"Porque por fe andamos, no por vista.",r:"2 Corintios 5:7"},
+  {v:"Me mostrarás la senda de la vida; plenitud de gozo hay en tu presencia.",r:"Salmos 16:11"},
+  {v:"Cantad alegres a Dios; servid a Jehová con alegría.",r:"Salmos 100:1-2"},
+];
+/* Reflexiones de Jimmy — el panel admin edita esto. Clave = fecha AAAA-MM-DD.
+   Si hoy tiene reflexión, se muestra debajo del versículo (y puede traer su propio verso). */
+const REFLEXIONES={
+  // "2026-06-14": { m:"Hoy Dios te recuerda que su tiempo es perfecto. — Jimmy" }
+};
+function renderPalabra(){
+  const now=new Date();
+  const start=new Date(now.getFullYear(),0,0);
+  const doy=Math.floor((now-start)/864e5);
+  const d=DEVOCIONALES[doy % DEVOCIONALES.length];
+  const iso=now.getFullYear()+'-'+('0'+(now.getMonth()+1)).slice(-2)+'-'+('0'+now.getDate()).slice(-2);
+  const r=REFLEXIONES[iso];
+  document.getElementById('palabraVerso').textContent='“'+((r&&r.v)?r.v:d.v)+'”';
+  document.getElementById('palabraRef').textContent=(r&&r.r)?r.r:d.r;
+  const box=document.getElementById('palabraReflexion');
+  if(r&&r.m){ document.getElementById('palabraMensaje').textContent=r.m; box.style.display='block'; }
+  else { box.style.display='none'; }
+}
+
+/* ============ INIT ============ */
+heroInit(); renderPalabra(); applyLang(); obs();
+</script>
+</body>
+</html>
